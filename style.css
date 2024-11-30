@@ -79,6 +79,13 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+img {
+    max-width: 100%; /* Ensures images don’t exceed screen width */
+    height: auto; /* Keeps the aspect ratio */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+}
+
 footer {
     text-align: center;
     padding: 1rem 0;

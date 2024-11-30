@@ -63,15 +63,19 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-.portfolio-item {
+h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0px;
+    font-weight: 100;
+}
+.projects-item {
     margin-bottom: 2rem;
 }
 
-.portfolio-item img {
+.projects-item img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ddd;
     margin-bottom: 0.5rem;
 }
 

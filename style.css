@@ -1,7 +1,9 @@
 /* General Reset */
 body {
     margin: 0;
-    font-family: 'Archivo Black', sans-serif;
+    font-family: "Roboto", serif;
+    font-weight: 350;
+    font-style: normal;
     color: #000;
     background-color: #fff;
     line-height: 1.6;
@@ -11,17 +13,27 @@ header {
     text-align: center;
     padding: 2rem 0;
     border-bottom: 2px solid #000;
+    font-family: "Roboto", serif;
+  font-weight: 950;
+  font-style: normal;
+    
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin: 0;
+   font-family: "Roboto", serif;
+  font-weight: 850;
+  font-style: normal;
 }
 
 .subtitle {
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 350;
     margin: 0.5rem 0;
+   font-family: "Roboto", serif;
+  font-weight: 400;
+  
 }
 
 nav ul {
@@ -30,15 +42,20 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
+    
 }
 
 nav ul li {
     margin: 0 1rem;
+    
 }
 
 nav ul li a {
     text-decoration: none;
-    font-size: 1rem;
+    font-family: "Roboto", serif;
+  font-weight: 750;
+  font-style: normal;
+    font-size: 0.9rem;
     color: #000;
     transition: color 0.3s;
 }
@@ -54,21 +71,26 @@ main {
 }
 
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.2rem;
 }
 
 h2 {
+    font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 h4 {
     font-size: 1rem;
     margin-bottom: 0.3rem;
     letter-spacing: 0px;
     font-weight: 100;
 }
+
 .projects-item {
     margin-bottom: 2rem;
 }
@@ -92,4 +114,46 @@ footer {
     border-top: 2px solid #000;
     font-size: 0.9rem;
     margin-top: 2rem;
+    font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+footer a:hover {
+    color: #555;
+    
+}
+
+/* Gallery Styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.project {
+    width: 300px;
+    text-align: center;
+}
+
+.project img {
+    width: 100%; /* Ensures images are rectangular and responsive */
+    height: auto;
+}
+
+.project-title {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+   font-family: "Roboto", serif;
+  font-weight: 300;
+  
 }

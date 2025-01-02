@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atelierhaus</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles for the carousel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            height: 580px; /* Fixed height for the carousel */
+            display: flex;
+            align-items: center;
+              overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+            width: 100%;
+    
+        }
+
+        .carousel-inner img {
+            flex-shrink: 0;
+            width: 100%; /* Ensures only one image is visible at a time */
+            height: auto;
+            max-height: 100%;
+
+            object-fit: contain;
+                   
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+            font-size: 17px;
+            color: black; /* Visible arrow color */
+            background: none;
+        }
+
+        .carousel-arrow.left {
+            left: -10px; /* Move outside the carousel */
+        }
+
+        .carousel-arrow.right {
+            right: -10px; /* Move outside the carousel */
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: -20px; /* Move below the carousel */
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .carousel-indicators span {
+            width: 10px;
+            height: 10px;
+            background-color: grey; /* Default greyish color */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-indicators span.active {
+            background-color: darkgrey; /* Darker shade for the current image */
+        }
+
+        /* Text spacing */
+        section {
+            margin-top: 20px;
+            padding: 20px;
+        }
+    </style>
+
+        
+        
+</head>
+<body>
+    <header>
+        <h1>STUDIO-HOUSE</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <button class="carousel-arrow left">&#9664;</button>
+            <div class="carousel-inner">
+                <img src="Modellfoto%20Atelierhaus.jpg" alt="Model">
+                <img src="GR Haus.jpg" alt="Floorplan">
+                <img src="GR%20Atelier.jpg" alt="Floorplan">
+                <img src="SchnittAnsicht.jpg" alt="Section and Elevation">
+                 <img src="Modellfoto%20Atelierhaus%20Innen%20Edited%202.jpg" alt="Interior Model">
+                
+            </div>
+            <button class="carousel-arrow right">&#9654;</button>
+            <div class="carousel-indicators">
+                <span class="active" data-slide="0"></span>
+                <span data-slide="1"></span>
+                <span data-slide="2"></span>
+                <span data-slide="3"></span>
+                <span data-slide="4"></span>
+            </div>
+        </div>
+
+        <!-- Text Section -->
+        <section>
+            <p>The concept behind the project is based on the dialectic of intro- and extroversion. This house is suitable for someone that works independently from others but enjoys social interactions during their free time.</p>
+            <p>The workplace is set in the center of a private garden, surrounded by covered walkways. This cloister-like garden creates a distraction-free space and allows for greater productivity and focus.</p>
+            <p>The living space, on the other hand, consists of four peripherally arranged spaces. These are connected by long corridors that serve the purpose of bringing more movement into everyday life. This is especially important in the case of a studio house, because the bringing together of living and working suggests that the inhabitant doesn’t need to leave the house very often and thus, would lack physical activity.</p>
+            <p>In order to emphasize the decoupling of working and living, both are located on two different floor levels. This separation strengthens the concept of introversion and extroversion even further.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stankova Magdalena. All rights reserved.</p>
+        <p><a href="index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        // Carousel JavaScript
+        const carouselInner = document.querySelector('.carousel-inner');
+        const carouselIndicators = document.querySelectorAll('.carousel-indicators span');
+        const leftArrow = document.querySelector('.carousel-arrow.left');
+        const rightArrow = document.querySelector('.carousel-arrow.right');
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            const width = carouselInner.parentElement.clientWidth;
+            carouselInner.style.transform = `translateX(-${index * width}px)`;
+
+            carouselIndicators.forEach(indicator => indicator.classList.remove('active'));
+            carouselIndicators[index].classList.add('active');
+        }
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselIndicators.length - 1;
+            updateCarousel(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex < carouselIndicators.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel(currentIndex);
+        });
+
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(index);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -13,18 +13,22 @@
             position: relative;
             max-width: 100%;
             margin: 0 auto;
-            height: 580px; /* Fixed height for the carousel */
+            height: 500px; /* Fixed height for the carousel */
             display: flex;
             align-items: center;
-              overflow: hidden;
+        }
+
+        .carousel-inner-wrapper {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         .carousel-inner {
             display: flex;
             transition: transform 0.5s ease;
             height: 100%;
-            width: 100%;
-    
         }
 
         .carousel-inner img {
@@ -32,9 +36,7 @@
             width: 100%; /* Ensures only one image is visible at a time */
             height: auto;
             max-height: 100%;
-
             object-fit: contain;
-                   
         }
 
         .carousel-arrow {
@@ -45,24 +47,23 @@
             cursor: pointer;
             padding: 10px;
             z-index: 1000;
-            font-size: 17px;
+            font-size: 24px;
             color: black; /* Visible arrow color */
             background: none;
         }
 
         .carousel-arrow.left {
-            left: -10px; /* Move outside the carousel */
+            left: -50px; /* Move outside the carousel */
         }
 
         .carousel-arrow.right {
-            right: -10px; /* Move outside the carousel */
+            right: -50px; /* Move outside the carousel */
         }
 
         .carousel-indicators {
             position: absolute;
             bottom: -20px; /* Move below the carousel */
             left: 50%;
-            z-index: 10;
             transform: translateX(-50%);
             display: flex;
             gap: 5px;
@@ -85,10 +86,58 @@
             margin-top: 20px;
             padding: 20px;
         }
-    </style>
 
-        
-        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel {
+                height: 300px; /* Adjust height for smaller screens */
+            }
+
+            .carousel-arrow {
+                font-size: 18px;
+                left: -30px;
+                right: -30px;
+            }
+
+            .carousel-indicators span {
+                width: 8px;
+                height: 8px;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel {
+                height: 200px; /* Further adjust height for very small screens */
+            }
+
+            .carousel-arrow {
+                font-size: 16px;
+                left: -20px;
+                right: -20px;
+            }
+
+            .carousel-indicators span {
+                width: 6px;
+                height: 6px;
+            }
+
+            section {
+                padding: 5px;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -105,13 +154,14 @@
         <!-- Carousel Section -->
         <div class="carousel">
             <button class="carousel-arrow left">&#9664;</button>
-            <div class="carousel-inner">
-                <img src="Modellfoto%20Atelierhaus.jpg" alt="Model">
-                <img src="GR Haus.jpg" alt="Floorplan">
-                <img src="GR%20Atelier.jpg" alt="Floorplan">
-                <img src="SchnittAnsicht.jpg" alt="Section and Elevation">
-                 <img src="Modellfoto%20Atelierhaus%20Innen%20Edited%202.jpg" alt="Interior Model">
-                
+            <div class="carousel-inner-wrapper">
+                <div class="carousel-inner">
+                    <img src="Modellfoto%20Atelierhaus.jpg" alt="Model">
+                    <img src="Modellfoto%20Atelierhaus%20Innen%20Edited%202.jpg" alt="Interior Model">
+                    <img src="GR Haus.jpg" alt="Floorplan">
+                    <img src="GR%20Atelier.jpg" alt="Atelier Floorplan">
+                    <img src="SchnittAnsicht.jpg" alt="Section and Elevation">
+                </div>
             </div>
             <button class="carousel-arrow right">&#9654;</button>
             <div class="carousel-indicators">

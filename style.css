@@ -163,7 +163,6 @@ footer a:hover {
         font-size: 18px !important;
         left: auto !important;
         right: auto !important;
-        background: rgba(255, 255, 255, 0.7) !important;
         border-radius: 50% !important;
         padding: 10px 15px !important;
         z-index: 1000 !important; /* Ensures it stays above images */
@@ -171,24 +170,6 @@ footer a:hover {
 
     .carousel-arrow.left {
         left: 5px !important; /* Keep arrows visible */
-    }
-
-    .carousel-arrow.right {
-        right: 5px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-arrow {
-        font-size: 16px !important;
-        left: auto !important;
-        right: auto !important;
-        padding: 5px 10px !important;
-        z-index: 1000 !important;
-    }
-
-    .carousel-arrow.left {
-        left: 5px !important;
     }
 
     .carousel-arrow.right {

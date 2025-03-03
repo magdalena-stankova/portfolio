@@ -175,5 +175,10 @@ footer a:hover {
     .carousel-arrow.right {
         right: 5px !important;
     }
-}
 
+    /* Ensure there's enough space on the sides for arrows */
+    .carousel {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+}

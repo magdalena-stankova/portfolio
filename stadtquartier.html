@@ -3,16 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stadtquartier</title>
-    <script>
-        window.onload = function() {
-            alert("Magdalena is still working on this page. You will be redirected to the home page.");
-            window.location.href = "index.html"; // Redirect to home page
-        };
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Letten Transformer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles for the carousel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            height: 500px; /* Fixed height for the carousel */
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-inner-wrapper {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            flex-shrink: 0;
+            width: 100%; /* Ensures only one image is visible at a time */
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1000;
+            font-size: 24px;
+            color: black; /* Visible arrow color */
+            background: none;
+        }
+
+        .carousel-arrow.left {
+            left: -50px; /* Move outside the carousel */
+        }
+
+        .carousel-arrow.right {
+            right: -50px; /* Move outside the carousel */
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: -20px; /* Move below the carousel */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .carousel-indicators span {
+            width: 10px;
+            height: 10px;
+            background-color: grey; /* Default greyish color */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-indicators span.active {
+            background-color: darkgrey; /* Darker shade for the current image */
+        }
+
+        /* Text spacing */
+        section {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel {
+                height: 300px; /* Adjust height for smaller screens */
+            }
+
+            .carousel-arrow {
+                font-size: 18px;
+                left: -40px;
+                right: -40px;
+            }
+
+            .carousel-indicators span {
+                width: 8px;
+                height: 8px;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel {
+                height: 200px; /* Further adjust height for very small screens */
+            }
+
+            .carousel-arrow {
+                font-size: 16px;
+                left: -50px; /* Ensure arrows stay outside */
+                right: -50px;
+            }
+
+            .carousel-indicators span {
+                width: 6px;
+                height: 6px;
+            }
+
+            section {
+                padding: 5px;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Stadtquartier</h1>
-    <p>Content coming soon...</p>
+    <header>
+        <h1>UURBAN NEIGHBORHOOD</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li> 
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <button class="carousel-arrow left">&#9664;</button>
+            <div class="carousel-inner-wrapper">
+                <div class="carousel-inner">
+                    <img src="BCN.jpeg" alt="Picture">
+                    <img src="City.jpg" alt="Plan">
+                    <img src="House.jpeg" alt="Picture">
+                    <img src="House%20Section.jpg" alt="Section">
+                    <img src="DiagrammTranslated.jpg" alt="Diagram">
+                    <img src="GR%20Unten.jpg" alt="Plan">
+                    <img src="House%20GR2.pdf" alt="Plan">
+                    <img src="House%20GR3.pdf" alt="Plan">
+                    <img src="Render1.jpg" alt="Rendering">
+                    <img src="Render2.jpg" alt="Rendering">
+                    
+                </div>
+            </div>
+            <button class="carousel-arrow right">&#9654;</button>
+            <div class="carousel-indicators">
+                <span class="active" data-slide="0"></span>
+                <span data-slide="1"></span>
+                <span data-slide="2"></span>
+                <span data-slide="3"></span>
+                <span data-slide="3"></span>
+                <span data-slide="4"></span>
+                <span data-slide="5"></span>
+                <span data-slide="6"></span>
+                <span data-slide="7"></span>
+                <span data-slide="8"></span>
+             
+            </div>
+        </div>
+
+    
+        <section>
+            <p>The concept behind this proposal for an urban neighborhood in Poblenou is based on the dialectic of intro- and extroversion and thus also public and private. The aim was to generate an interesting neighborhood using only one single house type.</p>
+    
+            <p>The block consists of 72 studio houses, with smaller buildings placed towards the narrow passages, while taller ones are situated along the wider streets. The widening of the passageways towards the ends creates a funnel, inviting people from outside into the neighborhood.</p>
+            
+            <p>With each oor, the studio houses get more and more priate.On one side, we have an extroverted and publicly accessible working area. The public squares can be seen as extensions of the working area, attracting customers. Given the variety of professions, each square would look different. The living space on the other hand, is private. The introverted inner courtyards serve as retreats, away from work. The trees provide additional privacy.</p>
+            
+            <p>The central staircase, connecting working and living, creates an air duct, channeling hot air up and out. The facade around the staircase is left permeable. This is extremely beneficial, given Barcelonas hot summers.</p>
+            
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Stankova Magdalena. All rights reserved.</p>
+        <p><a href="index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <script>
+        // Carousel JavaScript
+        const carouselInner = document.querySelector('.carousel-inner');
+        const carouselIndicators = document.querySelectorAll('.carousel-indicators span');
+        const leftArrow = document.querySelector('.carousel-arrow.left');
+        const rightArrow = document.querySelector('.carousel-arrow.right');
+
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            const width = carouselInner.parentElement.clientWidth;
+            carouselInner.style.transform = `translateX(-${index * width}px)`;
+
+            carouselIndicators.forEach(indicator => indicator.classList.remove('active'));
+            carouselIndicators[index].classList.add('active');
+        }
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselIndicators.length - 1;
+            updateCarousel(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex < carouselIndicators.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel(currentIndex);
+        });
+
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(index);
+            });
+        });
+    </script>
 </body>
 </html>

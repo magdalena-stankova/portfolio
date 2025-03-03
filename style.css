@@ -160,20 +160,20 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .carousel-arrow {
-        font-size: 18px;
-        left: 10px; /* Move arrows inside the carousel */
-        right: 10px;
-        background: rgba(255, 255, 255, 0.5); /* Optional: Add a semi-transparent background */
-        border-radius: 50%;
-        padding: 5px 10px;
+        font-size: 18px !important;
+        left: 10px !important;
+        right: 10px !important;
+        background: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 50% !important;
+        padding: 5px 10px !important;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-arrow {
-        font-size: 16px;
-        left: 5px;
-        right: 5px;
-        padding: 3px 8px;
+        font-size: 16px !important;
+        left: 5px !important;
+        right: 5px !important;
+        padding: 3px 8px !important;
     }
 }
